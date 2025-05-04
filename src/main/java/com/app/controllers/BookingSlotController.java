@@ -124,7 +124,7 @@ public class BookingSlotController {
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse> deleteBookingSlot(@PathVariable String id) {
         bookingSlotService.deleteBookingSlot(id);
-        ApiResponse response = new ApiResponse("Booking slot deleted successfully", true);
+        ApiResponse response = new ApiResponse(true,"Booking slot deleted successfully");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
