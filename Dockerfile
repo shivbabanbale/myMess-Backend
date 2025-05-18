@@ -8,5 +8,5 @@
     FROM openjdk:17-jdk-slim
     WORKDIR /app
     COPY --from=build /app/target/*.jar myMess.jar
-    ENTRYPOINT ["java","-Djdk.disable.container.metrics=true", "-jar", "myMess.jar"]
+    ENTRYPOINT ["java", "-Djdk.internal.platform.disableContainerSupport=true", "-jar", "myMess.jar"]
     
